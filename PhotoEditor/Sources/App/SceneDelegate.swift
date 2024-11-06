@@ -17,8 +17,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         window = UIWindow(windowScene: windowScene)
-        let vc = ViewController()
-        window?.rootViewController = vc
+        let tabBarController = TabBarController()
+        
+        if let controllers = tabBarController.viewControllers, !controllers.isEmpty {
+            tabBarController.selectedIndex = 0
+        }
+        
+        window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
     }
 

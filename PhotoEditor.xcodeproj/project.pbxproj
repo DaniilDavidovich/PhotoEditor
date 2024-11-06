@@ -7,21 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		839917562CDAFF240024137D /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839917552CDAFF240024137D /* SettingViewModel.swift */; };
+		8399175A2CDB0E120024137D /* ViewControllerBielder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839917592CDB0E120024137D /* ViewControllerBielder.swift */; };
+		8399175E2CDB0E860024137D /* AboutAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8399175D2CDB0E860024137D /* AboutAppViewController.swift */; };
+		839917602CDB0EAE0024137D /* AboutAppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8399175F2CDB0EAE0024137D /* AboutAppViewModel.swift */; };
+		839917652CDB16380024137D /* UITapGestureRecognizer +Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839917642CDB16380024137D /* UITapGestureRecognizer +Extension.swift */; };
+		8399176B2CDB23210024137D /* AllertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8399176A2CDB23210024137D /* AllertHelper.swift */; };
+		839917712CDB27230024137D /* DeveloperInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839917702CDB27230024137D /* DeveloperInfoModel.swift */; };
+		839917732CDB303C0024137D /* PhotoEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839917722CDB303C0024137D /* PhotoEditorViewController.swift */; };
+		839917752CDB3D2B0024137D /* PhotoEditorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839917742CDB3D2B0024137D /* PhotoEditorViewModel.swift */; };
 		83FFF0EF2CD8B5FE00433D21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FFF0EE2CD8B5FE00433D21 /* AppDelegate.swift */; };
 		83FFF0F12CD8B5FE00433D21 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FFF0F02CD8B5FE00433D21 /* SceneDelegate.swift */; };
-		83FFF0F32CD8B5FE00433D21 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FFF0F22CD8B5FE00433D21 /* ViewController.swift */; };
+		83FFF0F32CD8B5FE00433D21 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FFF0F22CD8B5FE00433D21 /* TabBarController.swift */; };
 		83FFF0F82CD8B5FF00433D21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83FFF0F72CD8B5FF00433D21 /* Assets.xcassets */; };
 		83FFF0FB2CD8B5FF00433D21 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 83FFF0FA2CD8B5FF00433D21 /* Base */; };
+		83FFF1092CD8C64000433D21 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FFF1082CD8C64000433D21 /* SettingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		839917552CDAFF240024137D /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
+		839917592CDB0E120024137D /* ViewControllerBielder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerBielder.swift; sourceTree = "<group>"; };
+		8399175D2CDB0E860024137D /* AboutAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppViewController.swift; sourceTree = "<group>"; };
+		8399175F2CDB0EAE0024137D /* AboutAppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppViewModel.swift; sourceTree = "<group>"; };
+		839917642CDB16380024137D /* UITapGestureRecognizer +Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITapGestureRecognizer +Extension.swift"; sourceTree = "<group>"; };
+		8399176A2CDB23210024137D /* AllertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllertHelper.swift; sourceTree = "<group>"; };
+		839917702CDB27230024137D /* DeveloperInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperInfoModel.swift; sourceTree = "<group>"; };
+		839917722CDB303C0024137D /* PhotoEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditorViewController.swift; sourceTree = "<group>"; };
+		839917742CDB3D2B0024137D /* PhotoEditorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditorViewModel.swift; sourceTree = "<group>"; };
 		83FFF0EB2CD8B5FE00433D21 /* PhotoEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83FFF0EE2CD8B5FE00433D21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83FFF0F02CD8B5FE00433D21 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		83FFF0F22CD8B5FE00433D21 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		83FFF0F22CD8B5FE00433D21 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		83FFF0F72CD8B5FF00433D21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		83FFF0FA2CD8B5FF00433D21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		83FFF0FC2CD8B5FF00433D21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83FFF1082CD8C64000433D21 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +55,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		839917572CDB0DE80024137D /* AboutAppViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8399175D2CDB0E860024137D /* AboutAppViewController.swift */,
+				8399175F2CDB0EAE0024137D /* AboutAppViewModel.swift */,
+				839917702CDB27230024137D /* DeveloperInfoModel.swift */,
+			);
+			path = AboutAppViewController;
+			sourceTree = "<group>";
+		};
+		8399175B2CDB0E160024137D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8399176A2CDB23210024137D /* AllertHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		8399175C2CDB0E320024137D /* Builders */ = {
+			isa = PBXGroup;
+			children = (
+				839917592CDB0E120024137D /* ViewControllerBielder.swift */,
+			);
+			path = Builders;
+			sourceTree = "<group>";
+		};
+		839917632CDB16250024137D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				839917642CDB16380024137D /* UITapGestureRecognizer +Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8399176F2CDB26850024137D /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				83FFF1052CD8C56F00433D21 /* TabBarController */,
+				839917572CDB0DE80024137D /* AboutAppViewController */,
+				83FFF1072CD8C5A300433D21 /* SettingViewController */,
+				83FFF1062CD8C58100433D21 /* PhotoEditorViewControoler */,
+			);
+			path = Flow;
+			sourceTree = "<group>";
+		};
 		83FFF0E22CD8B5FE00433D21 = {
 			isa = PBXGroup;
 			children = (
@@ -54,14 +119,67 @@
 		83FFF0ED2CD8B5FE00433D21 /* PhotoEditor */ = {
 			isa = PBXGroup;
 			children = (
-				83FFF0EE2CD8B5FE00433D21 /* AppDelegate.swift */,
-				83FFF0F02CD8B5FE00433D21 /* SceneDelegate.swift */,
-				83FFF0F22CD8B5FE00433D21 /* ViewController.swift */,
+				83FFF1032CD8B9A500433D21 /* Resources */,
+				83FFF1022CD8B98A00433D21 /* Sources */,
+			);
+			path = PhotoEditor;
+			sourceTree = "<group>";
+		};
+		83FFF1022CD8B98A00433D21 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				83FFF1042CD8B9AD00433D21 /* App */,
+				8399176F2CDB26850024137D /* Flow */,
+				8399175B2CDB0E160024137D /* Helpers */,
+				8399175C2CDB0E320024137D /* Builders */,
+				839917632CDB16250024137D /* Extensions */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		83FFF1032CD8B9A500433D21 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				83FFF0F72CD8B5FF00433D21 /* Assets.xcassets */,
 				83FFF0F92CD8B5FF00433D21 /* LaunchScreen.storyboard */,
 				83FFF0FC2CD8B5FF00433D21 /* Info.plist */,
 			);
-			path = PhotoEditor;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		83FFF1042CD8B9AD00433D21 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				83FFF0EE2CD8B5FE00433D21 /* AppDelegate.swift */,
+				83FFF0F02CD8B5FE00433D21 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		83FFF1052CD8C56F00433D21 /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				83FFF0F22CD8B5FE00433D21 /* TabBarController.swift */,
+			);
+			path = TabBarController;
+			sourceTree = "<group>";
+		};
+		83FFF1062CD8C58100433D21 /* PhotoEditorViewControoler */ = {
+			isa = PBXGroup;
+			children = (
+				839917722CDB303C0024137D /* PhotoEditorViewController.swift */,
+				839917742CDB3D2B0024137D /* PhotoEditorViewModel.swift */,
+			);
+			path = PhotoEditorViewControoler;
+			sourceTree = "<group>";
+		};
+		83FFF1072CD8C5A300433D21 /* SettingViewController */ = {
+			isa = PBXGroup;
+			children = (
+				83FFF1082CD8C64000433D21 /* SettingViewController.swift */,
+				839917552CDAFF240024137D /* SettingViewModel.swift */,
+			);
+			path = SettingViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,9 +252,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83FFF0F32CD8B5FE00433D21 /* ViewController.swift in Sources */,
+				839917602CDB0EAE0024137D /* AboutAppViewModel.swift in Sources */,
+				83FFF0F32CD8B5FE00433D21 /* TabBarController.swift in Sources */,
+				839917562CDAFF240024137D /* SettingViewModel.swift in Sources */,
+				8399175E2CDB0E860024137D /* AboutAppViewController.swift in Sources */,
+				839917752CDB3D2B0024137D /* PhotoEditorViewModel.swift in Sources */,
 				83FFF0EF2CD8B5FE00433D21 /* AppDelegate.swift in Sources */,
+				8399176B2CDB23210024137D /* AllertHelper.swift in Sources */,
+				839917712CDB27230024137D /* DeveloperInfoModel.swift in Sources */,
 				83FFF0F12CD8B5FE00433D21 /* SceneDelegate.swift in Sources */,
+				8399175A2CDB0E120024137D /* ViewControllerBielder.swift in Sources */,
+				839917732CDB303C0024137D /* PhotoEditorViewController.swift in Sources */,
+				839917652CDB16380024137D /* UITapGestureRecognizer +Extension.swift in Sources */,
+				83FFF1092CD8C64000433D21 /* SettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,7 +410,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8PHY3R68LB;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = PhotoEditor/Info.plist;
+				INFOPLIST_FILE = PhotoEditor/Resources/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app needs access to your photo library to save edited photos.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -309,7 +438,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8PHY3R68LB;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = PhotoEditor/Info.plist;
+				INFOPLIST_FILE = PhotoEditor/Resources/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app needs access to your photo library to save edited photos.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
