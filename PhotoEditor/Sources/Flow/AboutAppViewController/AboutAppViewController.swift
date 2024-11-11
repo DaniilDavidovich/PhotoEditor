@@ -13,7 +13,7 @@ final class AboutAppViewController: UIViewController {
     //MARK: - Properties
     
     private var viewModel: AboutAppViewModelProtocol
-
+    
     
     //MARK: - UIElements
     
@@ -46,7 +46,6 @@ final class AboutAppViewController: UIViewController {
     init(viewModel: AboutAppViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
-        viewModel.setupDelegate(to: self)
     }
     
     required init?(coder: NSCoder) {
@@ -111,19 +110,17 @@ final class AboutAppViewController: UIViewController {
             let nameRange = (text as NSString).range(of: "\(viewModel.getModel().firstName) \(viewModel.getModel().secondName)")
             
             if gesture.didTapAttributedTextInLabel(label: titleLabel, inRange: nameRange) {
-                viewModel.openUrl()
+                viewModel.openUrl { [weak self] success in
+                    guard let self else { return }
+                    switch success {
+                    case true:
+                        break
+                    case false:
+                        AllertHelper.presentErrorAllert(in: self)
+                    }
+                }
             }
         }
-    }
-}
-
-
-//MARK: - AboutAppViewModelDelegate
-
-extension AboutAppViewController: AboutAppViewModelDelegate {
-    
-    func urlError() {
-        AllertHelper.presentErrorAllert(in: self)
     }
 }
 

@@ -183,7 +183,8 @@ final class PhotoEditorViewController: UIViewController {
     }
     
     @objc private func saveImage() {
-        viewModel.saveImage(frameView: self.frameView) { success in
+        viewModel.saveImage(frameView: self.frameView) { [weak self] success in
+            guard let self else { return }
             if success {
                 AllertHelper.presentSuccessAllert(in: self)
             } else {

@@ -25,7 +25,7 @@ final class PhotoEditorViewModel: PhotoEditorViewProtocol {
 
     // MARK: - Properties
     
-    weak var delegate: PhotoEditorViewModelDelegate?
+    private weak var delegate: PhotoEditorViewModelDelegate?
     
     private var originalImage: UIImage?
     

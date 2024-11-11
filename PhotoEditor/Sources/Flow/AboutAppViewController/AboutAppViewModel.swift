@@ -8,16 +8,10 @@
 import Foundation
 import UIKit
 
-
-protocol AboutAppViewModelDelegate: AnyObject {
-    func urlError()
-}
-
 protocol AboutAppViewModelProtocol {
     init(model: DeveloperInfoModel)
     func getModel() -> DeveloperInfoModel
-    func openUrl()
-    func setupDelegate(to viewController: AboutAppViewModelDelegate)
+    func openUrl(completion: @escaping (Bool) -> Void)
 }
 
 
@@ -26,8 +20,6 @@ final class AboutAppViewModel: AboutAppViewModelProtocol {
     //MARK: - Properties
     
     private var model: DeveloperInfoModel
-
-    weak var delegate: AboutAppViewModelDelegate?
     
     private let url = URL(string: "https://github.com/DaniilDavidovich")
     
@@ -45,15 +37,11 @@ final class AboutAppViewModel: AboutAppViewModelProtocol {
         return model
     }
     
-    func openUrl() {
+    func openUrl(completion: @escaping (Bool) -> Void) {
         if let url {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            UIApplication.shared.open(url, options: [:], completionHandler: completion)
         } else {
-            delegate?.urlError()
+            completion(false)
         }
-    }
-    
-    func setupDelegate(to viewController: AboutAppViewModelDelegate) {
-        self.delegate = viewController
     }
 }
