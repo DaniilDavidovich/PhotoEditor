@@ -12,7 +12,7 @@ final class SettingViewController: UIViewController {
     
     //MARK: - Properties
     
-    private var viewModel: SettingViewModel
+    private var viewModel: SettingViewModelProtocol
     
     
     //MARK: - UIElements
@@ -29,7 +29,7 @@ final class SettingViewController: UIViewController {
     
     //MARK: - Lyfecycle
     
-    init(viewModel: SettingViewModel) {
+    init(viewModel: SettingViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }

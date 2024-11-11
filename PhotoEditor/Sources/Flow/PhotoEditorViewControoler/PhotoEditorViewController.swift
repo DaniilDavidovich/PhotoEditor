@@ -11,7 +11,7 @@ final class PhotoEditorViewController: UIViewController {
     
     //MARK: - Properties
     
-    private var viewModel: PhotoEditorViewModel
+    private var viewModel: PhotoEditorViewProtocol
     
     //MARK: - UIElements
     
@@ -42,10 +42,10 @@ final class PhotoEditorViewController: UIViewController {
     
     //MARK: - Lyfecycle
     
-    init(viewModel: PhotoEditorViewModel) {
+    init(viewModel: PhotoEditorViewProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
-        self.viewModel.delegate = self
+        self.viewModel.setupDelegate(to: self)
     }
     
     required init?(coder: NSCoder) {
@@ -144,7 +144,7 @@ final class PhotoEditorViewController: UIViewController {
     
     //MARK: - Methods
     
-    // Open photo gallery to select an image
+    
     @objc private func plusButtonDidTapped() {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
@@ -152,38 +152,31 @@ final class PhotoEditorViewController: UIViewController {
         present(imagePicker, animated: true, completion: nil)
     }
     
-    // Handle pan gesture for moving the image
     @objc private func handlePan(gesture: UIPanGestureRecognizer) {
         let translation = gesture.translation(in: frameView)
-        if let view = gesture.view {
+        if gesture.view != nil {
             imageView.center = CGPoint(x: imageView.center.x + translation.x, y: imageView.center.y + translation.y)
             gesture.setTranslation(.zero, in: frameView)
         }
     }
     
-    // Handle pinch gesture for zooming in/out the image
     @objc private func handlePinch(gesture: UIPinchGestureRecognizer) {
         guard let gestureView = gesture.view else { return }
         
-        // Get the location of the pinch gesture within the imageView
         let pinchLocation = gesture.location(in: imageView)
-        
-        // Calculate the new scale
         let scale = gesture.scale
         
-        // Adjust the transform of imageView, scaling around the pinch location
         gestureView.transform = gestureView.transform
             .translatedBy(x: pinchLocation.x - gestureView.bounds.midX, y: pinchLocation.y - gestureView.bounds.midY)
             .scaledBy(x: scale, y: scale)
             .translatedBy(x: gestureView.bounds.midX - pinchLocation.x, y: gestureView.bounds.midY - pinchLocation.y)
         
-        // Reset the scale factor to 1 to incrementally adjust the scaling
         gesture.scale = 1.0
     }
     
     
     @objc private func handleRotate(gesture: UIRotationGestureRecognizer) {
-        if let view = gesture.view {
+        if gesture.view != nil {
             imageView.transform = imageView.transform.rotated(by: gesture.rotation)
             gesture.rotation = 0
         }
@@ -197,11 +190,6 @@ final class PhotoEditorViewController: UIViewController {
                 AllertHelper.presentErrorAllert(in: self)
             }
         }
-    }
-    
-    @objc private func applyFilter() {
-        
-        viewModel.applyFilter(isOn: true)
     }
     
     @objc private func resetDidTapped() {
@@ -223,7 +211,7 @@ extension PhotoEditorViewController: UIImagePickerControllerDelegate, UINavigati
 
 //MARK: - PhotoEditorViewModelDelegate
 
-extension PhotoEditorViewController: PhotoEditorViewModelDelegate2 {
+extension PhotoEditorViewController: PhotoEditorViewModelDelegate {
     
     func needUpdateImage(with image: UIImage?) {
         imageView.image = image

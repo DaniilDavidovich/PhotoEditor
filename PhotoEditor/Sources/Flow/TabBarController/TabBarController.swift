@@ -28,7 +28,6 @@ final class TabBarController: UITabBarController {
         UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
     }
     
-    
     private func setupTabBarViewControllers() {
         
         let photoEditorViewController = ViewControllerBuilder.getPhotoEditorViewController()

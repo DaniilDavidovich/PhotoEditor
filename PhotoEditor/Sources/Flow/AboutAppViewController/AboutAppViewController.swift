@@ -12,7 +12,7 @@ final class AboutAppViewController: UIViewController {
     
     //MARK: - Properties
     
-    private var viewModel: AboutAppViewModel
+    private var viewModel: AboutAppViewModelProtocol
 
     
     //MARK: - UIElements
@@ -43,10 +43,10 @@ final class AboutAppViewController: UIViewController {
     
     //MARK: - Lifecycle
     
-    init(viewModel: AboutAppViewModel) {
+    init(viewModel: AboutAppViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
-        viewModel.delegate = self
+        viewModel.setupDelegate(to: self)
     }
     
     required init?(coder: NSCoder) {

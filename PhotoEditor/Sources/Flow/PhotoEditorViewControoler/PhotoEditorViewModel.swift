@@ -7,19 +7,28 @@
 
 import UIKit
 
-protocol PhotoEditorViewModelDelegate2: AnyObject {
+protocol PhotoEditorViewModelDelegate: AnyObject {
     func needUpdateImage(with image: UIImage?)
     func needShowEditor(isVisible: Bool)
     func didUpdateImageAfterApplyFilter(with image: UIImage)
 }
 
-final class PhotoEditorViewModel {
-    
+protocol PhotoEditorViewProtocol {
+    func loadImage(_ image: UIImage)
+    func applyFilter(isOn: Bool)
+    func saveImage(frameView: UIView, completion: @escaping (Bool) -> Void)
+    func resetEditor()
+    func setupDelegate(to viewController: PhotoEditorViewModelDelegate)
+}
+
+final class PhotoEditorViewModel: PhotoEditorViewProtocol {
+
     // MARK: - Properties
     
-    weak var delegate: PhotoEditorViewModelDelegate2?
+    weak var delegate: PhotoEditorViewModelDelegate?
     
     private var originalImage: UIImage?
+    
     
     // MARK: - Methods
     
@@ -63,5 +72,9 @@ final class PhotoEditorViewModel {
         self.originalImage = nil
         delegate?.needUpdateImage(with: nil)
         delegate?.needShowEditor(isVisible: false)
+    }
+    
+    func setupDelegate(to viewController: PhotoEditorViewModelDelegate) {
+        self.delegate = viewController
     }
 }

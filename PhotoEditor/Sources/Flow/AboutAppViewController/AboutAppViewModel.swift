@@ -13,8 +13,15 @@ protocol AboutAppViewModelDelegate: AnyObject {
     func urlError()
 }
 
+protocol AboutAppViewModelProtocol {
+    init(model: DeveloperInfoModel)
+    func getModel() -> DeveloperInfoModel
+    func openUrl()
+    func setupDelegate(to viewController: AboutAppViewModelDelegate)
+}
 
-final class AboutAppViewModel {
+
+final class AboutAppViewModel: AboutAppViewModelProtocol {
     
     //MARK: - Properties
     
@@ -44,5 +51,9 @@ final class AboutAppViewModel {
         } else {
             delegate?.urlError()
         }
+    }
+    
+    func setupDelegate(to viewController: AboutAppViewModelDelegate) {
+        self.delegate = viewController
     }
 }

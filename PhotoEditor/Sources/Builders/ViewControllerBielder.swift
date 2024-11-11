@@ -9,20 +9,20 @@
 final class ViewControllerBuilder {
     
     static func getPhotoEditorViewController() -> PhotoEditorViewController {
-        let viewModel = PhotoEditorViewModel()
+        let viewModel: PhotoEditorViewProtocol = PhotoEditorViewModel()
         let viewController = PhotoEditorViewController(viewModel: viewModel)
         return viewController
     }
     
     static func getSettingViewController() -> SettingViewController {
-        let viewModel = SettingViewModel()
+        let viewModel: SettingViewModelProtocol = SettingViewModel()
         let viewController = SettingViewController(viewModel: viewModel)
         return viewController
     }
     
     static func getAboutAppViewController() -> AboutAppViewController {
         let model = DeveloperInfoModel.setupMockModel()
-        let viewModel = AboutAppViewModel(model: model)
+        let viewModel: AboutAppViewModelProtocol = AboutAppViewModel(model: model)
         let viewController = AboutAppViewController(viewModel: viewModel)
         return viewController
     }

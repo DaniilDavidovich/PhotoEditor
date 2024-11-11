@@ -5,8 +5,14 @@
 //  Created by Daniil Davidovich on 6.11.24.
 //
 
+protocol SettingViewModelProtocol {
+    func getDataSourceModel() -> [[SettingViewModel.DataSourceModel]]
+    func getNumberOfRowsInSection(at section: Int) -> Int
+    func getNumberOfSection() -> Int
+}
 
-final class SettingViewModel {
+
+final class SettingViewModel: SettingViewModelProtocol {
     
     //MARK: - Properties
     
