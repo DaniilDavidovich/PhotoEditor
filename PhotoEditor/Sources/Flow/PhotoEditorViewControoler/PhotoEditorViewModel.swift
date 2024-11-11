@@ -54,6 +54,10 @@ final class PhotoEditorViewModel: PhotoEditorViewProtocol {
     }
     
     func saveImage(frameView: UIView, completion: @escaping (Bool) -> Void) {
+        
+        let originalBorderColor = frameView.layer.borderColor
+        frameView.layer.borderColor = UIColor.clear.cgColor
+        
         UIGraphicsBeginImageContextWithOptions(frameView.bounds.size, false, UIScreen.main.scale)
         frameView.drawHierarchy(in: CGRect(origin: .zero, size: frameView.bounds.size), afterScreenUpdates: true)
         
@@ -66,6 +70,7 @@ final class PhotoEditorViewModel: PhotoEditorViewProtocol {
         } else {
             completion(false)
         }
+        frameView.layer.borderColor = originalBorderColor
     }
     
     func resetEditor() {

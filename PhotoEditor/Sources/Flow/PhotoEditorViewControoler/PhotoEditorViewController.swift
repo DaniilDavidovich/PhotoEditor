@@ -13,6 +13,7 @@ final class PhotoEditorViewController: UIViewController {
     
     private var viewModel: PhotoEditorViewProtocol
     
+    
     //MARK: - UIElements
     
     private lazy var plusButton: UIButton = {
@@ -101,8 +102,8 @@ final class PhotoEditorViewController: UIViewController {
         let rotateGesture = UIRotationGestureRecognizer(target: self, action: #selector(handleRotate))
         rotateGesture.delegate = self
         frameView.addGestureRecognizer(panGesture)
-        imageView.addGestureRecognizer(pinchGesture)
-        imageView.addGestureRecognizer(rotateGesture)
+        frameView.addGestureRecognizer(pinchGesture)
+        frameView.addGestureRecognizer(rotateGesture)
     }
     
     private func setupNavigationBar() {
@@ -153,11 +154,21 @@ final class PhotoEditorViewController: UIViewController {
     }
     
     @objc private func handlePan(gesture: UIPanGestureRecognizer) {
+        guard let gestureView = gesture.view else { return }
+        
         let translation = gesture.translation(in: frameView)
-        if gesture.view != nil {
-            imageView.center = CGPoint(x: imageView.center.x + translation.x, y: imageView.center.y + translation.y)
-            gesture.setTranslation(.zero, in: frameView)
-        }
+        
+        let rotationAngle = atan2(gestureView.transform.b, gestureView.transform.a)
+        
+        let adjustedTranslationX = translation.x * cos(rotationAngle) - translation.y * sin(rotationAngle)
+        let adjustedTranslationY = translation.x * sin(rotationAngle) + translation.y * cos(rotationAngle)
+        
+        imageView.center = CGPoint(
+            x: imageView.center.x + adjustedTranslationX,
+            y: imageView.center.y + adjustedTranslationY
+        )
+        
+        gesture.setTranslation(.zero, in: frameView)
     }
     
     @objc private func handlePinch(gesture: UIPinchGestureRecognizer) {
@@ -166,20 +177,19 @@ final class PhotoEditorViewController: UIViewController {
         let pinchLocation = gesture.location(in: imageView)
         let scale = gesture.scale
         
-        gestureView.transform = gestureView.transform
-            .translatedBy(x: pinchLocation.x - gestureView.bounds.midX, y: pinchLocation.y - gestureView.bounds.midY)
+        imageView.transform = imageView.transform
+            .translatedBy(x: pinchLocation.x - imageView.bounds.midX, y: pinchLocation.y - imageView.bounds.midY)
             .scaledBy(x: scale, y: scale)
-            .translatedBy(x: gestureView.bounds.midX - pinchLocation.x, y: gestureView.bounds.midY - pinchLocation.y)
+            .translatedBy(x: imageView.bounds.midX - pinchLocation.x, y: imageView.bounds.midY - pinchLocation.y)
         
         gesture.scale = 1.0
     }
     
-    
     @objc private func handleRotate(gesture: UIRotationGestureRecognizer) {
-        if gesture.view != nil {
-            imageView.transform = imageView.transform.rotated(by: gesture.rotation)
-            gesture.rotation = 0
-        }
+        guard gesture.view != nil else { return }
+
+        imageView.transform = imageView.transform.rotated(by: gesture.rotation)
+        gesture.rotation = 0
     }
     
     @objc private func saveImage() {
@@ -198,6 +208,7 @@ final class PhotoEditorViewController: UIViewController {
     }
 }
 
+
 //MARK: - UIImagePickerControllerDelegate & UINavigationControllerDelegate
 
 extension PhotoEditorViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -209,6 +220,7 @@ extension PhotoEditorViewController: UIImagePickerControllerDelegate, UINavigati
         dismiss(animated: true, completion: nil)
     }
 }
+
 
 //MARK: - PhotoEditorViewModelDelegate
 
